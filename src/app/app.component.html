@@ -227,6 +227,16 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+      <div class="container content-wrapper">
+        @for (module of modules; track module.name) {
+          <div class="card">
+            <h2>{{ module.title }}</h2>
+            @for (block of module.text; track $index) {
+              <p>{{ block }}</p>
+            }
+          </div>
+        }
+      </div>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
